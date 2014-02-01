@@ -15,4 +15,10 @@ describe('shortify', function() {
     chai.expect(bar).to.equal('bar');
   });
 
+  it('should resolve module "baz"', function() {
+    var baz = require('../test/three/baz');
+
+    chai.expect(baz).to.equal('baz');
+  });
+
 });

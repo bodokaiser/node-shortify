@@ -12,7 +12,8 @@ var builder = browserify({
 
 var transform = shortify({
   'one': '../modules/one',
-  'two': '../modules/two'
+  'two': '../modules/two',
+  'three': '../modules/three'
 });
 
 builder.transform(transform).bundle()

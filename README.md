@@ -45,6 +45,14 @@ Main motivation behind this is that you can keep the > 80 character per
 line limit when requiring templates, configuration, ... files shared
 between your server and client environment.
 
+## Credits
+
+Thank you to [anubhava](http://stackoverflow.com/users/548225/anubhava)
+and [T. J. Crowder](http://stackoverflow.com/users/157247/t-j-crowder)
+on
+[stackoverflow](http://stackoverflow.com/questions/21497574/dynamic-replace-in-regular-expression-scope#21497633)
+for helping me out with the regex. (Still seems mystical to me ^^).
+
 ## License
 
 Copyright © 2013 Bodo Kaiser <i@bodokaiser.io>
