@@ -1,0 +1,23 @@
+#!/usr/bin/env node
+
+var shortify   = require('../lib');
+var browserify = require('browserify');
+
+var builder = browserify({
+  entries: [
+    './opt/test/index.js'
+  ],
+  debug: true
+});
+
+var transform = shortify({
+  'one': '../modules/one',
+  'two': '../modules/two'
+});
+
+builder.transform(transform).bundle()
+  .on('error', handle).pipe(process.stdout);
+
+function handle(error) {
+  throw error;
+}

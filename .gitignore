@@ -1,0 +1,21 @@
+# logs
+*.log
+
+# temporary
+*.swp
+
+# filesystem
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*~
+
+# packages
+node_modules
+
+# builds
+opt/test/build.js

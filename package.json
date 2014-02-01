@@ -1,0 +1,49 @@
+{
+
+  "name": "shortify",
+
+  "version": "0.0.0",
+
+  "author": "Bodo Kaiser <i@bodokaiser.io>",
+
+  "keywords": [
+    "alias",
+    "browserify",
+    "transform",
+    "require",
+    "aliasify"
+  ],
+
+  "description": "rewrites require paths with defined aliases",
+
+  "main": "lib/index.js",
+
+  "scripts": {
+    "test": "make test"
+  },
+
+  "engines": {
+    "node": "0.10.*",
+    "npm": "1.3.*"
+  },
+
+  "dependencies": {
+    "through": "2.3.*"
+  },
+
+  "devDependencies": {
+    "chai": "1.8.*",
+    "mocha": "1.16.*",
+    "browserify": "3.24.*",
+    "mocha-phantomjs": "3.3.*"
+  },
+
+  "repository": {
+    "url": "git://github.com/bodokaiser/node-shortify.git"
+  },
+
+  "bugs": {
+    "url": "https://github.com/bodokaiser/node-shortify/issues"
+  }
+
+}
