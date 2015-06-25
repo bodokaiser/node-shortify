@@ -11,7 +11,7 @@ Install with [npm(1)](http://npmjs.org):
 
 ## Preview
 
-Call shortify with your alias hash and pass it to the `transform` method of 
+Call shortify with your alias hash and pass it to the `transform` method of
 your browserify instance.
 
 ```
@@ -29,7 +29,6 @@ Then require your modules will be rewritten from:
 var bar = require('foo/bar');
 var baz = require('foo/../baz');
 
-// your module.exports source code
 ```
 
 to:
@@ -41,9 +40,25 @@ var baz = require('../../foo/../baz');
 // your module.exports source code
 ```
 
+You can do the same with `import` in ES6:
+
+```
+import bar from "foo/bar";
+import baz from "foo/../baz";
+
+// compiles to:
+import bar from "../../foo/bar";
+import baz from "../../foo/../baz";
+```
+
 Main motivation behind this is that you can keep the > 80 character per
 line limit when requiring templates, configuration, ... files shared
 between your server and client environment.
+
+## Testing
+
+Run `npm test` to build the file and and run the Mocha tests defined in
+`opt/test/index.js`.
 
 ## Credits
 

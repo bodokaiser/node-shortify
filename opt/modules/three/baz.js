@@ -1,1 +1,1 @@
-module.exports = 'baz';
+module.exports = { baz: 1 };
