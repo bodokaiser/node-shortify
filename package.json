@@ -25,6 +25,7 @@
     "babelify": "^6.1.2",
     "browserify": "3.33.1",
     "chai": "1.9.1",
+    "lodash": "^3.9.3",
     "mocha": "1.18.2",
     "mocha-phantomjs": "3.3.2",
     "phantomjs": "1.9.8"

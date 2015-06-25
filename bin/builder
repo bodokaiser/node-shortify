@@ -2,6 +2,7 @@
 
 var shortify   = require('../lib');
 var browserify = require('browserify');
+var babelify = require('babelify');
 
 var builder = browserify({
   entries: [
@@ -16,8 +17,12 @@ var transform = shortify({
   'three': '../modules/three'
 });
 
-builder.transform(transform).bundle()
-  .on('error', handle).pipe(process.stdout);
+builder
+  .transform(transform)
+  .transform(babelify)
+  .bundle()
+  .on('error', handle)
+  .pipe(process.stdout);
 
 function handle(error) {
   throw error;

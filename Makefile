@@ -1,5 +1,5 @@
-BUILDER					= ./bin/builder
-MOCHA_PHANTOMJS = ./node_modules/.bin/mocha-phantomjs
+BUILDER					= babel-node ./bin/builder
+MOCHA_PHANTOMJS			= node ./node_modules/.bin/mocha-phantomjs
 
 MOCHA_FLAGS = \
 	--reporter spec
