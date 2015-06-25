@@ -11,7 +11,7 @@ Install with [npm(1)](http://npmjs.org):
 
 ## Preview
 
-Call shortify with your alias hash and pass it to the `transform` method of 
+Call shortify with your alias hash and pass it to the `transform` method of
 your browserify instance.
 
 ```
@@ -44,6 +44,16 @@ var baz = require('../../foo/../baz');
 Main motivation behind this is that you can keep the > 80 character per
 line limit when requiring templates, configuration, ... files shared
 between your server and client environment.
+
+## Testing
+
+Make sure you install Babel and Mocha globally first:
+
+```
+npm install -g babel mocha
+```
+
+Then run `npm test`.
 
 ## Credits
 
