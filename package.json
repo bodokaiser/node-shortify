@@ -1,6 +1,6 @@
 {
   "name": "shortify",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Bodo Kaiser <i@bodokaiser.io>",
   "description": "rewrites require paths with defined aliases",
   "keywords": [
