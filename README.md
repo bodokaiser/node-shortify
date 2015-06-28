@@ -57,6 +57,12 @@ between your server and client environment.
 
 ## Contribute
 
+Make sure to install Babel and Mocha globally:
+
+```
+npm install -g babel mocha
+```
+
 Make your changes to `lib/index.js`, and make sure to at least run 
 `make build` (and preferably run `make test`) before committing any 
 changes. The actual imported file is the compiled ES5-compatible 
@@ -64,13 +70,8 @@ file, `dist/index.js`.
 
 ## Testing
 
-Make sure you install Babel and Mocha globally first:
-
-```
-npm install -g babel mocha
-```
-
-Then run `npm test`.
+Run `npm test` to build the file and and run your Mocha tests in
+`opt/test/index.js`.
 
 ## Credits
 
