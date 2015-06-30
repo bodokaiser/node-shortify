@@ -5,6 +5,12 @@ import { foo as fooImport } from 'one/foo';
 import { bar as barImport } from 'two/../two/bar';
 import { baz as bazImport } from '../test/three/baz';
 
+import 'one/fooGlobal';
+import 'two/../two/barGlobal';
+import '../test/three/bazGlobal';
+
+console.log("glboal after import: ", process);
+
 
 describe('shortify', function() {
 
@@ -42,6 +48,43 @@ describe('shortify in ES6', function() {
 
   it('should resolve module "baz"', function() {
     chai.expect(bazImport).to.equal(1);
+  });
+
+
+  it('should resolve module "fooGlobal"', function() {
+    if (typeof(window) != "undefined") {
+      chai.expect(window.foo).to.equal(1);
+    }
+    else if (typeof(process) != "undefined") {
+      chai.expect(process.foo).to.equal(1);
+    }
+    else {
+      chat.fail();
+    }
+  });
+
+  it('should resolve module "barGlobal"', function() {
+    if (typeof(window) != "undefined") {
+      chai.expect(window.bar).to.equal(1);
+    }
+    else if (typeof(process) != "undefined") {
+      chai.expect(process.bar).to.equal(1);
+    }
+    else {
+      chat.fail();
+    }
+  });
+
+  it('should resolve module "bazGlobal"', function() {
+    if (typeof(window) != "undefined") {
+      chai.expect(window.baz).to.equal(1);
+    }
+    else if (typeof(process) != "undefined") {
+      chai.expect(process.baz).to.equal(1);
+    }
+    else {
+      chat.fail();
+    }
   });
 
 });
