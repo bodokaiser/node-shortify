@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var shortify   = require('../dist');
+var shortify   = require('../lib');
 var browserify = require('browserify');
 var babelify = require('babelify');
 

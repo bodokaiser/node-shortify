@@ -40,7 +40,7 @@ var baz = require('../../foo/../baz');
 // your module.exports source code
 ```
 
-You may also do the same with `import` in ES6:
+You can do the same with `import` in ES6:
 
 ```
 import bar from "foo/bar";
@@ -55,22 +55,9 @@ Main motivation behind this is that you can keep the > 80 character per
 line limit when requiring templates, configuration, ... files shared
 between your server and client environment.
 
-## Contribute
-
-Make sure to install Babel and Mocha globally:
-
-```
-npm install -g babel mocha
-```
-
-Make your changes to `lib/index.js`, and make sure to at least run 
-`make build` (and preferably run `make test`) before committing any 
-changes. The actual imported file is the compiled ES5-compatible 
-file, `dist/index.js`.
-
 ## Testing
 
-Run `npm test` to build the file and and run your Mocha tests in
+Run `npm test` to build the file and and run the Mocha tests defined in
 `opt/test/index.js`.
 
 ## Credits

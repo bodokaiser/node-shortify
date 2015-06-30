@@ -1,9 +1,11 @@
+SHELL := /bin/bash
+PATH  := node_modules/.bin:$(PATH)
+
 build:
-	babel lib/index.js --out-file dist/index.js
+	node bin/builder > opt/test/build.js
 
 test: build
-	babel-node bin/builder > opt/test/build.js
-	mocha opt/test/build.js
+	@mocha --reporter spec opt/test/build.js
 
 clean:
 	@rm opt/test/build.js
