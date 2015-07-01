@@ -1,18 +1,11 @@
-BUILDER					= ./bin/builder
-MOCHA_PHANTOMJS = ./node_modules/.bin/mocha-phantomjs
-
-MOCHA_FLAGS = \
-	--reporter spec
-
-PHANTOMJS_FLAGS = \
-	--debug=true
+SHELL := /bin/bash
+PATH  := node_modules/.bin:$(PATH)
 
 build:
-	$(BUILDER) > opt/test/build.js
+	node bin/builder > opt/test/build.js
 
 test: build
-	$(MOCHA_PHANTOMJS) $(MOCHA_FLAGS) $(PHANTOMJS_FLAGS) \
-		opt/test/index.html
+	@mocha --reporter spec opt/test/build.js
 
 clean:
 	@rm opt/test/build.js
