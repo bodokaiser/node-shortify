@@ -9,9 +9,6 @@ import 'one/fooGlobal';
 import 'two/../two/barGlobal';
 import '../test/three/bazGlobal';
 
-console.log("glboal after import: ", process);
-
-
 describe('shortify', function() {
 
   it('should resolve module "foo"', function() {
@@ -30,6 +27,12 @@ describe('shortify', function() {
     var baz = require('../test/three/baz');
 
     chai.expect(baz.baz).to.equal(1);
+  });
+
+  it('should resolve module "vendor/module"', function() {
+    var module = require('vendor/module');
+
+    chai.expect(module.vendorModule).to.equal(1);
   });
 
 });

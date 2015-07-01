@@ -14,7 +14,8 @@ var builder = browserify({
 var transform = shortify({
   'one': '../modules/one',
   'two': '../modules/two',
-  'three': '../modules/three'
+  'three': '../modules/three',
+  'vendor': './lib/vendor'
 });
 
 builder
