@@ -1,6 +1,6 @@
 {
   "name": "shortify",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "author": "Bodo Kaiser <i@bodokaiser.io>",
   "license": "BSD",
   "description": "rewrites require paths with defined aliases",
@@ -16,7 +16,7 @@
   },
   "engines": {
     "node": "0.12.x",
-    "npm": "2.11.x"
+    "npm": ">= 2.11.x"
   },
   "main": "lib",
   "dependencies": {
