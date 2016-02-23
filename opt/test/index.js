@@ -6,27 +6,36 @@ var shortener = require('../../lib/shortener')({
 
 import { foo as fooImport } from 'one/foo';
 import { bar as barImport } from 'two/../two/bar';
-import { baz as bazImport } from '../test/three/baz';
+import { baz as bazImport } from '../modules/three/baz';
 
 import 'one/fooGlobal';
 import 'two/../two/barGlobal';
-import '../test/three/bazGlobal';
+import '../modules/three/bazGlobal';
 
 describe('shortener', function() {
 
   it('should replace with require', function() {
     chai.expect(shortener('require("App/Modules/view.js")'))
       .to.equal('require("__toto__/Modules/view.js")');
+
+    chai.expect(shortener('require("App/AppModules/view.js")'))
+      .to.equal('require("__toto__/AppModules/view.js")');
   });
 
   it('should replace with from', function() {
     chai.expect(shortener('import { foo as fooImport } from "App/Modules/view.js"'))
       .to.equal('import { foo as fooImport } from "__toto__/Modules/view.js"');
+
+    chai.expect(shortener('import { foo as fooImport } from "App/AppModules/view.js"'))
+      .to.equal('import { foo as fooImport } from "__toto__/AppModules/view.js"');
   });
 
   it('should replace with import', function() {
     chai.expect(shortener('import "App/Modules/view.js"'))
       .to.equal('import "__toto__/Modules/view.js"');
+
+    chai.expect(shortener('import "App/AppModules/view.js"'))
+      .to.equal('import "__toto__/AppModules/view.js"');
   });
 });
 
@@ -45,7 +54,7 @@ describe('shortify', function() {
   });
 
   it('should resolve module "baz"', function() {
-    var baz = require('../test/three/baz');
+    var baz = require('../modules/three/baz');
 
     chai.expect(baz.baz).to.equal(1);
   });
